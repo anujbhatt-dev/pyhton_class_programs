@@ -1,0 +1,24 @@
+from datetime import date
+class Person:
+    
+    #class constructor
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    @classmethod
+    def details(cls, name, year):
+        return cls(name, date.today().year - year)
+    
+    @staticmethod
+    def check_age(age):
+        return age > 18
+
+
+#Driver's code
+p1 = Person('Nihira', 8)
+p2 = Person.details('Aarohi', 1992)
+
+print(p1.name, p1.age) 
+print(p2.name, p2.age)
+print(Person.check_age(25))
